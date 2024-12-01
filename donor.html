@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Details Form</title>
+    <link rel="stylesheet" href="donor.css">
+    <script src="valid.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <form action="thank.html" method="post" onsubmit="return validateAcknowledgment();">
+            <!-- Personal Information Section -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="input-box">
+                    <label for="full-name" class="details">Full Name</label>
+                    <input id="full-name" name="full-name" type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                    <label for="age" class="details">Age</label>
+                    <input id="age" name="age" type="number" placeholder="Enter your age" required>
+                </div>
+                <div class="input-box">
+                    <label for="dob" class="details">Date of Birth</label>
+                    <input id="dob" name="dob" type="date" required>
+                </div>
+                <div class="input-box">
+                    <label for="phone" class="details">Phone Number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" required>
+                </div>
+                <div class="input-box">
+                    <label for="email" class="details">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                    <label for="address" class="details">Address</label>
+                    <input id="address" name="address" type="text" placeholder="Enter your address" required>
+                </div>
+                <div class="gender-options">
+                    <span class="gender-title">Gender</span>
+                    <div class="gender-selection">
+                        <label for="male">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            Male
+                        </label>
+                        <label for="female">
+                            <input type="radio" id="female" name="gender" value="female" required>
+                            Female
+                        </label>
+                    </div>
+                </div>                
+            </fieldset>
+             <!-- Medical Information Section -->
+             <fieldset>
+                <legend>Medical Information</legend>
+                <div class="input-box">
+                    <label for="height" class="details">Height</label>
+                    <input id="height" type="text" placeholder="Enter your height" required>
+                </div>
+                <div class="input-box">
+                    <label for="weight" class="details">Weight</label>
+                    <input id="weight" type="text" placeholder="Enter your weight" required>
+                </div>
+                <div class="input-box">
+                    <label for="blood-group" class="details">Blood Group</label>
+                    <input id="blood-group" type="text" placeholder="Enter your blood group" required>
+                </div>
+                <div class="input-box">
+                    <label for="allergies" class="details">Known Allergies</label>
+                    <input id="allergies" type="text" placeholder="Specify if any">
+                </div>
+                <div class="input-box">
+                    <label for="medications" class="details">Current Medications</label>
+                    <input id="medications" type="text" placeholder="List medications and reasons">
+                </div>
+                <div class="input-box">
+                    <label for="medical-condition" class="details">Medical Condition</label>
+                    <input id="medical-condition" type="text" placeholder="e.g., asthma, diabetes, etc.">
+                </div>
+                <div class="input-box">
+                    <label for="hospitalization" class="details">Previous Hospitalization</label>
+                    <input id="hospitalization" type="text" placeholder="Reason and treatment details">
+                </div>
+                <div class="family-history">
+                    <span class="family-title">Family History of Illness</span>
+                    <div class="category">
+                        <label><input type="checkbox" name="family-illness" value="asthma"> Asthma</label>
+                        <label><input type="checkbox" name="family-illness" value="cardiovascular"> Cardiovascular Disease</label>
+                        <label><input type="checkbox" name="family-illness" value="diabetes"> Diabetes</label>
+                        <label><input type="checkbox" name="family-illness" value="hypertension"> Hypertension</label>
+                        <label><input type="checkbox" name="family-illness" value="tuberculosis"> Tuberculosis</label>
+                        <label>
+                            <input type="checkbox" id="other-illness" value="other">
+                            <input type="text" id="other-illness-input" placeholder="Other" disabled>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Organ Donation Section -->
+            <fieldset>
+                <legend>Organ Donation Details</legend>
+                <div class="input-box">
+                    <label for="registration-date" class="details">Date of Registration</label>
+                    <input id="registration-date" type="date" required>
+                </div>
+                <div class="organ-tobe">
+                    <span class="organ-title">Organs to be Donated</span>
+                    <div class="category">
+                        <label><input type="checkbox" name="organs-donation" value="liver"> Liver</label>
+                        <label><input type="checkbox" name="organs-donation" value="kidney"> Kidney</label>
+                        <label><input type="checkbox" name="organs-donation" value="pancreas"> Pancreas</label>
+                        <label><input type="checkbox" name="organs-donation" value="heart"> Heart</label>
+                        <label><input type="checkbox" name="organs-donation" value="cornea"> Cornea</label>
+                        <label><input type="checkbox" name="organs-donation" value="bone"> Bone</label>
+                        <label><input type="checkbox" name="organs-donation" value="lung"> Lung</label>
+                        <label><input type="checkbox" name="organs-donation" value="bone-marrow"> Bone Marrow</label>
+                        <label><input type="checkbox" name="organs-donation" value="all"> All of the above</label>
+                    </div>
+                </div>
+                <div class="specific-purpose">
+                    <span class="purpose-title">Specific Purpose</span>
+                    <label><input type="radio" name="specific-purpose" value="medical-transplant" required> Medical Transplant</label>
+                    <label><input type="radio" name="specific-purpose" value="educational-research" required> Educational/Research</label>
+                    <label><input type="radio" name="specific-purpose" value="any" required> Any</label>
+                </div>
+            </fieldset>
+            <!-- Acknowledgment and Terms -->
+            <fieldset>
+                <legend>Acknowledgment and Terms</legend>
+                <div class="ack-term">
+                    <label><input type="checkbox" name="ack-term" required> I confirm the information provided is accurate.</label>
+                    <label><input type="checkbox" name="ack-term" required> I allow my organs to be donated.</label>
+                    <label><input type="checkbox" name="ack-term" required> I acknowledge informing my family of this decision.</label>
+                    <label><input type="checkbox" name="ack-term" required> I confirm keeping donation documents with me.</label>
+                    <label><input type="checkbox" name="ack-term" required> I allow my data to be submitted to the donor registry.</label>
+                </div>
+            </fieldset>
+            <!-- Submit Button -->
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
